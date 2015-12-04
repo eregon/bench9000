@@ -1,4 +1,4 @@
-OPERATIONS = 500_000
+EXPECTED_VALUE = 2
 
 class Holder
   attr_accessor :my_var
@@ -13,17 +13,15 @@ def micro_harness_input
 end
 
 def micro_harness_iterations
-  125
+  10_000_000
 end
 
 def micro_harness_sample(input)
-  x = -1
-  OPERATIONS.times { x = 2 if input.my_var.nil? }
-  x
+  EXPECTED_VALUE if input.my_var.nil?
 end
 
 def micro_harness_expected
-  2
+  EXPECTED_VALUE
 end
 
 require 'bench/micro-harness'

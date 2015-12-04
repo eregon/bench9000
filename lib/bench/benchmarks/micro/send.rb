@@ -1,19 +1,17 @@
-OPERATIONS = 500_000
-
 def micro_harness_input
   "abc"
 end
 
 def micro_harness_iterations
-  120
+  10_000_000
 end
 
 def micro_harness_sample(input)
-  OPERATIONS.times { input.length }
+  input.length
 end
 
 def micro_harness_expected
-  OPERATIONS
+  micro_harness_input.length
 end
 
 require 'bench/micro-harness'

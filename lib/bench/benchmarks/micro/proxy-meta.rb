@@ -1,5 +1,3 @@
-OPERATIONS = 500_000
-
 class Proxy
   def initialize(str)
     @str = str
@@ -19,15 +17,15 @@ def micro_harness_input
 end
 
 def micro_harness_iterations
-  75
+  10_000_000
 end
 
 def micro_harness_sample(input)
-  OPERATIONS.times { input.length_missing }
+  input.length_missing
 end
 
 def micro_harness_expected
-  OPERATIONS
+  micro_harness_input.length
 end
 
 require 'bench/micro-harness'
