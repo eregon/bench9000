@@ -153,6 +153,11 @@ benchmark "literature-acid", "#{default_benchmarks_dir}/literature/acid.rb"
 benchmark_group "literature",
   "literature-acid"
 
+benchmark "templating-erb", "#{default_benchmarks_dir}/templating/erb.rb"
+
+benchmark_group "templating",
+  "templating-erb"
+
 # Other groups
 
 benchmark_group "3",
