@@ -84,7 +84,6 @@ def micro_harness_sample(input)
    end ; _erbout.concat "\n"
   _erbout.concat "</body>\n"
   _erbout.concat "</html>\n"
-  _erbout.force_encoding(__ENCODING__)
 
   _erbout.length
 end
