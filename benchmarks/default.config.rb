@@ -21,8 +21,8 @@ rbenv "jruby-9.0.5.0-int-graal", "jruby-9.0.5.0", "-J-graal -J-Xmx2G -X-C", "JAV
 rbenv "jruby-9.0.5.0-noindy-graal", "jruby-9.0.5.0", "-J-graal -J-Xmx2G -Xcompile.invokedynamic=false", "JAVACMD=#{ENV['GRAAL_BIN']}"
 rbenv "jruby-9.0.5.0-indy-graal", "jruby-9.0.5.0", "-J-graal -J-Xmx2G -Xcompile.invokedynamic=true", "JAVACMD=#{ENV['GRAAL_BIN']}"
 
-rbenv "rbx-3.14-int", "rbx-3.14", "-Xint"
-rbenv "rbx-3.14"
+rbenv "rbx-3.15-int", "rbx-3.15", "-Xint"
+rbenv "rbx-3.15"
 
 rbenv "topaz-dev"
 
