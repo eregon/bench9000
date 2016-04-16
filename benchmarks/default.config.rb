@@ -132,6 +132,7 @@ benchmark "graph-connected", "#{default_benchmarks_dir}/graph/connected.rb"
 
 micro_benchmarks = %w[
   string-equal
+  string-index
   pack-big-xLX-repeat
   pack-big-U-loop
   pack-small-mixture
