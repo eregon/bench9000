@@ -1,7 +1,13 @@
 # encoding: UTF-8
 
 def micro_harness_input
-  "abcdefghij" + 'こ'
+  s = "abcdefghij" + 'こ'
+
+  if ENV['USE_MUTABLE_ROPES'] && defined?(Truffle)
+    Truffle::Primitive.convert_to_mutable_rope s
+  end
+
+  s
 end
 
 def micro_harness_iterations

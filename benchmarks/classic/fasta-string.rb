@@ -48,10 +48,12 @@ ALU =
    "AGCCTGGGCGACAGAGCGAGACTCCGTCTCAAAAA"
 
 def make_repeat_fasta(src, n)
+    Truffle::Primitive.convert_to_mutable_rope(src) if ENV['USE_MUTABLE_ROPES'] && defined?(Truffle)
     l = src.length
     s = src * ((n / l) + 1)
     s.slice!(n, l)
     output = ''
+    Truffle::Primitive.convert_to_mutable_rope(output) if ENV['USE_MUTABLE_ROPES'] && defined?(Truffle)
     0.step(s.length-1,60) {|x| output << s[x,60]; output << "\n"}
     output
 end

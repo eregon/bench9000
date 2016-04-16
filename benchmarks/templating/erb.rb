@@ -39,6 +39,7 @@ end
 
 def micro_harness_sample(input)
   _erbout = ''
+  Truffle::Primitive.convert_to_mutable_rope(_erbout) if ENV['USE_MUTABLE_ROPES'] && defined?(Truffle)
   _erbout.concat "<!--\n"
   _erbout.concat "~ Copyright (c) 2010 - 2015 Slim Team\n"
   _erbout.concat "~\n"

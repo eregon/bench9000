@@ -2,6 +2,11 @@ def micro_harness_input
   s = "abcdefghij" * 1_000_000
   t = s.dup
 
+  if ENV['USE_MUTABLE_ROPES'] && defined?(Truffle)
+    Truffle::Primitive.convert_to_mutable_rope s
+    Truffle::Primitive.convert_to_mutable_rope t
+  end
+
   # Ensure to unshare the underlying buffers
   t.setbyte(1, 'z'.ord)
   t.setbyte(1, 'b'.ord)
