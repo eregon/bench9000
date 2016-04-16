@@ -3,8 +3,8 @@ def micro_harness_input
   t = s.dup
 
   # Ensure to unshare the underlying buffers
-  t[0] = 'z'
-  t[0] = 'a'
+  t.setbyte(1, 'z'.ord)
+  t.setbyte(1, 'b'.ord)
 
   [s, t]
 end
