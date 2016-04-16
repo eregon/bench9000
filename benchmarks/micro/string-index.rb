@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 def micro_harness_input
   "abcdefghij" + 'こ'
 end

@@ -13,6 +13,10 @@ rbenv "2.1.8"
 rbenv "2.2.4"
 rbenv "2.3.0"
 
+rbenv "jruby-1.7.24-int", "jruby-1.7.24", "-J-Xmx2G -X-C"
+rbenv "jruby-1.7.24-noindy", "jruby-1.7.24", "-J-Xmx2G -Xcompile.invokedynamic=false"
+rbenv "jruby-1.7.24-indy", "jruby-1.7.24", "-J-Xmx2G -Xcompile.invokedynamic=true"
+
 rbenv "jruby-9.0.5.0-int", "jruby-9.0.5.0", "-J-Xmx2G -X-C"
 rbenv "jruby-9.0.5.0-noindy", "jruby-9.0.5.0", "-J-Xmx2G -Xcompile.invokedynamic=false"
 rbenv "jruby-9.0.5.0-indy", "jruby-9.0.5.0", "-J-Xmx2G -Xcompile.invokedynamic=true"
