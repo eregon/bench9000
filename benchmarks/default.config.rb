@@ -11,18 +11,28 @@ rbenv "1.9.3-p551"
 rbenv "2.0.0-p648"
 rbenv "2.1.8"
 rbenv "2.2.4"
-rbenv "2.3.0"
+rbenv "2.3.1"
 
-rbenv "jruby-9.0.5.0-int", "jruby-9.0.5.0", "-J-Xmx2G -X-C"
-rbenv "jruby-9.0.5.0-noindy", "jruby-9.0.5.0", "-J-Xmx2G -Xcompile.invokedynamic=false"
-rbenv "jruby-9.0.5.0-indy", "jruby-9.0.5.0", "-J-Xmx2G -Xcompile.invokedynamic=true"
+rbenv "jruby-1.7.25-int", "jruby-1.7.25", "-J-Xmx2G -X-C"
+rbenv "jruby-1.7.25-noindy", "jruby-1.7.25", "-J-Xmx2G -Xcompile.invokedynamic=false"
+rbenv "jruby-1.7.25-indy", "jruby-1.7.25", "-J-Xmx2G -Xcompile.invokedynamic=true"
 
-rbenv "jruby-9.0.5.0-int-graal", "jruby-9.0.5.0", "-J-graal -J-Xmx2G -X-C", "JAVACMD=#{ENV['GRAAL_BIN']}"
-rbenv "jruby-9.0.5.0-noindy-graal", "jruby-9.0.5.0", "-J-graal -J-Xmx2G -Xcompile.invokedynamic=false", "JAVACMD=#{ENV['GRAAL_BIN']}"
-rbenv "jruby-9.0.5.0-indy-graal", "jruby-9.0.5.0", "-J-graal -J-Xmx2G -Xcompile.invokedynamic=true", "JAVACMD=#{ENV['GRAAL_BIN']}"
+rbenv "jruby-9.1.2.0-int", "jruby-9.1.2.0", "-J-Xmx2G -X-C"
+rbenv "jruby-9.1.2.0-noindy", "jruby-9.1.2.0", "-J-Xmx2G -Xcompile.invokedynamic=false"
+rbenv "jruby-9.1.2.0-indy", "jruby-9.1.2.0", "-J-Xmx2G -Xcompile.invokedynamic=true"
 
-rbenv "rbx-3.14-int", "rbx-3.14", "-Xint"
-rbenv "rbx-3.14"
+rbenv "jruby-master-noindy", "jruby-master", "-J-Xmx2G -Xcompile.invokedynamic=false"
+rbenv "jruby-master-indy", "jruby-master", "-J-Xmx2G -Xcompile.invokedynamic=true"
+
+rbenv "jruby-9.1.2.0-int-graal", "jruby-9.1.2.0", "-J-graal -J-Xmx2G -X-C", "JAVACMD=#{ENV['GRAAL_BIN']}"
+rbenv "jruby-9.1.2.0-noindy-graal", "jruby-9.1.2.0", "-J-graal -J-Xmx2G -Xcompile.invokedynamic=false", "JAVACMD=#{ENV['GRAAL_BIN']}"
+rbenv "jruby-9.1.2.0-indy-graal", "jruby-9.1.2.0", "-J-graal -J-Xmx2G -Xcompile.invokedynamic=true", "JAVACMD=#{ENV['GRAAL_BIN']}"
+
+rbenv "rbx-3.15-int", "rbx-3.15", "-Xint"
+rbenv "rbx-3.15"
+
+rbenv "rbx-3.56-int", "rbx-3.56", "-Xint"
+rbenv "rbx-3.56"
 
 rbenv "topaz-dev"
 
@@ -131,7 +141,18 @@ benchmark_group "psd", *psd_benchmarks
 benchmark "graph-connected", "#{default_benchmarks_dir}/graph/connected.rb"
 
 micro_benchmarks = %w[
+  string-append
+  string-concat
   string-equal
+  string-index
+  string-index-html-ascii
+  string-index-html-multi-byte
+  string-length-ascii
+  string-length-multi-byte
+  string-multiplication
+  string-substring
+  string-substring-long-string
+  string-substring-mri-optimized
   pack-big-xLX-repeat
   pack-big-U-loop
   pack-small-mixture
