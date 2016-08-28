@@ -1,8 +1,11 @@
 # encoding: UTF-8
 
-$truffle_mutable_ropes = ENV['USE_MUTABLE_ROPES'] && defined?(Truffle)
-
+START_STRING = '<html>'
 NULL = File.open('/dev/null', 'w')
+
+if ENV['USE_MUTABLE_ROPES'] && defined?(Truffle)
+  Truffle::Ropes.convert_to_mutable_rope START_STRING
+end
 
 def micro_harness_input
 end
@@ -12,12 +15,7 @@ def micro_harness_iterations
 end
 
 def micro_harness_sample(input)
-  string = '<html>'
-
-  if $truffle_mutable_ropes
-    Truffle::Ropes.convert_to_mutable_rope string
-  end
-
+  string = START_STRING.dup
   string << '<ul>'
 
   10_000.times do |n|
