@@ -38,6 +38,7 @@ rbenv "topaz-dev"
 
 binary "jruby-dev-truffle", "#{ENV['JRUBY_DEV_DIR']}/bin/jruby", "-J-Xmx2G -X+T"
 binary "jruby-dev-truffle-graal", "JAVACMD=#{ENV['GRAAL_BIN']} #{ENV['JRUBY_DEV_DIR']}/bin/jruby", "-J-Xmx2G -J-G:+TruffleCompilationExceptionsAreFatal -X+T"
+binary "jruby-dev-truffle-graal-rstring", "JAVACMD=#{ENV['GRAAL_BIN']} USE_MUTABLE_ROPES=true #{ENV['JRUBY_DEV_DIR']}/bin/jruby", "-J-Xmx2G -J-G:+TruffleCompilationExceptionsAreFatal -X+T"
 
 if ENV.has_key? "RUBY_BIN" and ENV.has_key? "RUBY_ARGS"
   binary "custom", ENV['RUBY_BIN'], ENV['RUBY_ARGS']
