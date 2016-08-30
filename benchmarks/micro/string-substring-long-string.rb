@@ -1,6 +1,6 @@
 # encoding: UTF-8
 
-X = ('HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello' * 100).freeze
+X = 'HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello'.freeze
 NULL = File.open('/dev/null', 'w')
 
 if ENV['USE_MUTABLE_ROPES'] && defined?(Truffle)
